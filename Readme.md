@@ -1,13 +1,19 @@
 # Dockerfile
 
-# Build et Push de l'Image Docker
+# Identifiant de docker hub
 
 docker login
 
 # Pousser l'Image vers Docker Hub
-docker build -t laprofamacron/yourapp:latest
+docker build -t tcaron/yourapp:latest
 
-docker push laprofamacron/yourapp:latest
+docker push tcaron/yourapp:latest
+
+# Exemple
+
+C:\Users\tcaron\fastapi-redis-app>docker images
+REPOSITORY                                  TAG          IMAGE ID       CREATED              SIZE
+tcaron/fastapi-redis-app             latest       21e41e0c7e15   About a minute ago   524MB
 
 ## Manifests Kubernetes
 
@@ -76,6 +82,11 @@ kubectl apply -f redis-service.yaml
 # Vérifiez l'état des pods
 
 kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+deployment-58636cff87-tbx7k      1/1     Running   0          25s
+redis-deployment-8652ff5-96bpd   1/1     Running   0          4m53s
+
+
 
 # Vérifiez l'état des services
 
